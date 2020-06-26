@@ -1,7 +1,7 @@
 class Scenario {
-  constructor(scenarioImage, speed) {
+  constructor(scenarioImage, velocity) {
     this.scenarioImage = scenarioImage;
-    this.speed = speed;
+    this.velocity = velocity;
     this.x1 = 0;
     this.x2 = width;
   }
@@ -12,8 +12,8 @@ class Scenario {
   }
   
   move() {
-    this.x1 = this.x1 - this.speed;
-    this.x2 = this.x2 - this.speed;
+    this.x1 = this.x1 - this.velocity;
+    this.x2 = this.x2 - this.velocity;
     
     if(this.x1 < -width) {this.x1 = width};
     if(this.x2 < -width) {this.x2 = width};
