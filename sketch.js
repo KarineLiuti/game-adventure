@@ -2,6 +2,7 @@ let scenarioImage;
 let characterImage;
 let scenario;
 let gameSound;
+let jumpSound;
 let character;
 let enemy;
 const enemyMatrix = [
@@ -58,6 +59,7 @@ function preload() {
   characterImage = loadImage('imagens/personagem/correndo.png');
   enemyImage = loadImage('imagens/inimigos/gotinha.png');
   gameSound = loadSound('sons/trilha_jogo.mp3');
+  jumpSound = loadSound('sons/jump_sound.mp3');
 }
 
 function setup() {
@@ -72,6 +74,7 @@ function setup() {
 function keyPressed(){
   if(key == 'ArrowUp') {
     character.jumpCharacter();
+    jumpSound.play();
   }
 }
 
@@ -85,5 +88,6 @@ function draw() {
   enemy.showElement();
   enemy.move();
 
+  if (character.isCollisionOn(enemy)) noLoop();
 }
 

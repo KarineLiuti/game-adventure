@@ -20,4 +20,19 @@ class Character extends Animation {
     if(this.y > this.startY)
       this.y = this.startY;
   }
+
+  isCollisionOn(enemyObject) {
+    const precision = 0.64;
+    const didCollision = collideRectRect(
+      this.x,
+      this.y,
+      this.widthObject * precision,
+      this.heightObject * precision,
+      enemyObject.x,
+      enemyObject.y,
+      enemyObject.widthObject * precision, 
+      enemyObject.heightObject * precision
+    )
+    return didCollision;
+  }
 }
