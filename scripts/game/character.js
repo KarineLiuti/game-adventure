@@ -7,23 +7,33 @@ class Character extends Animation {
     this.startY = height - this.heightObject - yVariation;
     this.y = this.startY;
     this.jumpSpeed = 0;
-    this.gravity = 3;
+    this.jumpHeight = -50,
+    this.gravity = 6;
+    this.jumps = 0;
   }
 
   jumpCharacter() {
-    this.jumpSpeed = -30;
+    if(this.jumps < 2) {
+      this.jumpSpeed = this.jumpHeight;
+      this.jumps++;
+    }
   }
 
   applyGravity() {
     this.y += this.jumpSpeed;
     this.jumpSpeed += this.gravity;
 
-    if(this.y > this.startY)
+    if(this.y > this.startY) {
       this.y = this.startY;
+      this.jumps = 0;
+    }
   }
 
   isCollisionOn(enemyObject) {
     const precision = 0.65;
+    
+    // this.verifyObjectsArea(precision, enemyObject);
+
     const didCollision = collideRectRect(
       this.x,
       this.y,
@@ -34,6 +44,20 @@ class Character extends Animation {
       enemyObject.widthObject * precision, 
       enemyObject.heightObject * precision
     )
+    console.log(didCollision)
     return didCollision;
+  }
+
+  verifyObjectsArea(precision, enemyObject) {
+    noFill();
+    rect(this.x,
+      this.y,
+      this.widthObject * precision,
+      this.heightObject * precision);
+
+    rect(enemyObject.x,
+      enemyObject.y,
+      enemyObject.widthObject * precision,
+      enemyObject.heightObject * precision);
   }
 }
