@@ -3,5 +3,21 @@ class Character extends Animation {
     super(matrixCharacter, imageObject, x, widthObject, heightObject, spriteWidth, spriteHeight)
     
     this.currentFrameCharacter = 0;
+    this.startY = height - this.heightObject;
+    this.y = this.startY;
+    this.jumpSpeed = 0;
+    this.gravity = 3;
+  }
+
+  jumpCharacter() {
+    this.jumpSpeed = -30;
+  }
+
+  applyGravity() {
+    this.y += this.jumpSpeed;
+    this.jumpSpeed += this.gravity;
+
+    if(this.y > this.startY)
+      this.y = this.startY;
   }
 }

@@ -69,11 +69,18 @@ function setup() {
   //gameSound.loop();
 }
 
+function keyPressed(){
+  if(key == 'ArrowUp') {
+    character.jumpCharacter();
+  }
+}
+
 function draw() {
   scenario.show();
   scenario.move();
   
   character.showElement();
+  character.applyGravity();
   
   enemy.showElement();
   enemy.move();
