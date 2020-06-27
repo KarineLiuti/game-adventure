@@ -44,7 +44,6 @@ class Character extends Animation {
       enemyObject.widthObject * precision, 
       enemyObject.heightObject * precision
     )
-    console.log(didCollision)
     return didCollision;
   }
 
