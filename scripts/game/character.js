@@ -1,9 +1,10 @@
 class Character extends Animation {
-  constructor(matrixCharacter, imageObject, x, widthObject, heightObject, spriteWidth, spriteHeight) {
-    super(matrixCharacter, imageObject, x, widthObject, heightObject, spriteWidth, spriteHeight)
+  constructor(matrixCharacter, imageObject, x, yVariation, widthObject, heightObject, spriteWidth, spriteHeight) {
+    super(matrixCharacter, imageObject, x, yVariation, widthObject, heightObject, spriteWidth, spriteHeight)
     
+    this.yVariation = yVariation;
     this.currentFrameCharacter = 0;
-    this.startY = height - this.heightObject;
+    this.startY = height - this.heightObject - yVariation;
     this.y = this.startY;
     this.jumpSpeed = 0;
     this.gravity = 3;
@@ -22,7 +23,7 @@ class Character extends Animation {
   }
 
   isCollisionOn(enemyObject) {
-    const precision = 0.64;
+    const precision = 0.65;
     const didCollision = collideRectRect(
       this.x,
       this.y,

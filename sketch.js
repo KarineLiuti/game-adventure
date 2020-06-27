@@ -65,8 +65,8 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   scenario = new Scenario(scenarioImage, 3);
-  character = new Character(matrixCharacter, characterImage, 0, 110, 135, 220, 270);
-  enemy = new Enemy(enemyMatrix, enemyImage, width - 50, 52, 52, 104, 104);
+  character = new Character(matrixCharacter, characterImage, 0, 25, 110, 135, 220, 270, jumpSound);
+  enemy = new Enemy(enemyMatrix, enemyImage, width - 50, 30, 52, 52, 104, 104);
   frameRate(40);
   //gameSound.loop();
 }
