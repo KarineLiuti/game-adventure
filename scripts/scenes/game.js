@@ -41,7 +41,7 @@ class Game {
   
     if(isVisibleEnemy) {
       this.currentEnemy++;
-      if(this.this.currentEnemy > enemies.length -1) {
+      if(this.currentEnemy > enemies.length -1) {
         this.currentEnemy = 0;
       }
       enemy.speedEnemy = parseInt(random(8, 15));
@@ -49,8 +49,7 @@ class Game {
   
     if (character.isCollisionOn(enemy)) {
       image(gameOverImage, width/2 - 200, height/3);
-      console.log('crashed')
-      // noLoop()
+      noLoop()
     };
   
   }
