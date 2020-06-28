@@ -3,7 +3,7 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
   frameRate(40);
-  //gameSound.loop();
+  gameSound.loop();
   game = new Game();
   game.setup();
   startScene = new StartScene();
