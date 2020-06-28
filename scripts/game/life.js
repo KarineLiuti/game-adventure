@@ -2,7 +2,7 @@ class Life {
   constructor(startAmount, totalAmount) {
     this.startAmount = startAmount;
     this.totalAmount = totalAmount;
-    this.lifeQuantity = this.totalAmount;
+    this.lifeQuantity = this.startAmount;
 
     this.widthImage = 25;
     this.heightImage = 25;

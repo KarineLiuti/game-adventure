@@ -2,24 +2,8 @@ class Game {
   constructor() {
     this.currentIndexOfMapGame = 0;
 
-    this.mapGame = [
-      {
-        enemy: WATER_DROP,
-        speedObject: 10
-      },
-      {
-        enemy: TROLL,
-        speedObject: 8
-      },
-      {
-        enemy: TROLL,
-        speedObject: 6
-      },
-      {
-        enemy: FLYING_WATER_DROP,
-        speedObject: 20
-      },
-    ]
+    this.gameSettings = cartridge.settings;
+    this.mapGame = cartridge.mapGame;
   }
 
   setup() {
@@ -29,7 +13,8 @@ class Game {
     const trollEnemy = new Enemy(trollEnemyMatrix, trollEnemyImage, width, 10, 200, 200, 400, 400, 10);
     const flyingWaterDropEnemy = new Enemy(flyingWaterDropEnemyMatrix, flyingWaterDropEnemyImage, width + 500, 350, 100, 75, 200, 150, 20);
     score = new Score();
-    life = new Life(3, 3);
+    console.log(this.gameSettings)
+    life = new Life(this.gameSettings.startAmount, this.gameSettings.totalAmount);
 
     enemies.push(enemy)
     enemies.push(trollEnemy)

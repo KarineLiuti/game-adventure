@@ -1,0 +1,24 @@
+{
+  "settings": {
+    "startAmount": 3,
+    "totalAmount": 5
+  },
+  "mapGame": [
+    {
+    "enemy": 0,
+    "speedObject": 10
+    },
+    {
+    "enemy": 1,
+    "speedObject": 8
+    },
+    {
+    "enemy": 1,
+    "speedObject": 6
+    },
+    {
+    "enemy": 2,
+    "speedObject": 20
+    }
+  ]
+}

@@ -21,9 +21,8 @@ let startSceneFont;
 
 let buttonManager;
 
-const WATER_DROP = 0;
-const TROLL = 1;
-const FLYING_WATER_DROP = 2;
+let cartridge;
+
 
 const enemyMatrix = [
   [0, 0],

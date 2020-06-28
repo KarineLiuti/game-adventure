@@ -7,6 +7,7 @@ function preload() {
   trollEnemyImage = loadImage('imagens/inimigos/troll.png');
   startSceneImage = loadImage('imagens/cenario/start-scene.png');
   enemyImage = loadImage('imagens/inimigos/gotinha.png');
+  cartridge = loadJSON('cartridge/cartridge.json');
   gameOverImage = loadImage('imagens/assets/game-over.png');
   gameSound = loadSound('sons/trilha_jogo.mp3');
   jumpSound = loadSound('sons/jump_sound.mp3');
