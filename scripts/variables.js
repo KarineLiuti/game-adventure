@@ -13,7 +13,7 @@ const enemies = [];
 let score;
 let game;
 
-let currentScene = 'game';
+let currentScene = 'startScene';
 let scenes;
 let startScene;
 let startSceneImage;

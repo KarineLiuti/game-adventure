@@ -6,7 +6,7 @@ class ButtonManager {
     this.button = createButton(this.textButton);
     this.button.addClass('botao-tela-inicial');
     this.button.mousePressed(() => {
-      currentScene = 'game'
+      currentScene = 'game';
       this._updateScene();
     })
   }
