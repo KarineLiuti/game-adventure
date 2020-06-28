@@ -10,6 +10,7 @@ class Game {
     const trollEnemy = new Enemy(trollEnemyMatrix, trollEnemyImage, width, 10, 200, 200, 400, 400, 10, 100);
     const flyingWaterDropEnemy = new Enemy(flyingWaterDropEnemyMatrix, flyingWaterDropEnemyImage, width + 500, 350, 100, 75, 200, 150, 20, 100);
     score = new Score();
+    life = new Life(3, 3);
 
     enemies.push(enemy)
     enemies.push(trollEnemy)
@@ -26,6 +27,8 @@ class Game {
   draw() {
     scenario.show();
     scenario.move();
+
+    life.draw();
     
     character.showElement();
     character.applyGravity();

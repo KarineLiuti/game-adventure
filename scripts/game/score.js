@@ -4,6 +4,7 @@ class Score {
   }
 
   show() {
+    textFont(startSceneFont);
     textAlign(RIGHT);
     textStyle(BOLD);
     textSize(50);

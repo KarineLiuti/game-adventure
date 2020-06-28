@@ -1,14 +1,19 @@
 let scenarioImage;
 let characterImage;
-let scenario;
-let gameSound;
 let gameOverImage;
+let lifeImage;
+let life;
+
+let gameSound;
 let jumpSound;
+
+let scenario;
 let character;
 const enemies = [];
 let score;
 let game;
-let currentScene = 'startScene';
+
+let currentScene = 'game';
 let scenes;
 let startScene;
 let startSceneImage;

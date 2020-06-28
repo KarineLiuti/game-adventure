@@ -1,4 +1,5 @@
 function preload() {
+  lifeImage = loadImage('imagens/assets/heart-life.png')
   scenarioImage = loadImage('imagens/cenario/jungle.png');
   characterImage = loadImage('imagens/personagem/correndo.png');
   enemyImage = loadImage('imagens/inimigos/gotinha.png');
