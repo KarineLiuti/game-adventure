@@ -11,6 +11,7 @@ function setup() {
     game,
     startScene
   }
+  buttonManager = new ButtonManager('START', width/2, (height/3)*1.5);
 }
 
 function keyPressed(){

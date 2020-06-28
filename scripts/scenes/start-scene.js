@@ -4,6 +4,7 @@ class StartScene {
   draw() {
     this._backgroundImage();
     this._text();
+    this._button();
   }
 
   _backgroundImage() {
@@ -19,4 +20,7 @@ class StartScene {
     text('LOVELACE', width/2, (height/5)*2.3)
   }
 
+  _button() {
+    buttonManager.draw()
+  }
 }

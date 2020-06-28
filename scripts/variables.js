@@ -14,6 +14,8 @@ let startScene;
 let startSceneImage;
 let startSceneFont;
 
+let buttonManager;
+
 const enemyMatrix = [
   [0, 0],
   [104, 0],
