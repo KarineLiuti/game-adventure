@@ -1,6 +1,25 @@
 class Game {
   constructor() {
-    this.currentEnemy = 0;
+    this.currentIndexOfMapGame = 0;
+
+    this.mapGame = [
+      {
+        enemy: WATER_DROP,
+        speedObject: 10
+      },
+      {
+        enemy: TROLL,
+        speedObject: 8
+      },
+      {
+        enemy: TROLL,
+        speedObject: 6
+      },
+      {
+        enemy: FLYING_WATER_DROP,
+        speedObject: 20
+      },
+    ]
   }
 
   setup() {
@@ -32,27 +51,32 @@ class Game {
     
     character.showElement();
     character.applyGravity();
-    
+
+    const currentObjectOfMapGame = this.mapGame[this.currentIndexOfMapGame];    
+    const enemy = enemies[currentObjectOfMapGame.enemy];
+    const isVisibleEnemy = enemy.x < -enemy.widthObject;
+
     score.show();
     score.addScore();
-    
-    const enemy = enemies[this.currentEnemy];
-    const isVisibleEnemy = enemy.x < -enemy.widthObject;
   
+    enemy.speedEnemy = currentObjectOfMapGame.speedObject;
     enemy.showElement();
     enemy.move();
   
     if(isVisibleEnemy) {
-      this.currentEnemy++;
-      if(this.currentEnemy > enemies.length -1) {
-        this.currentEnemy = 0;
+      this.currentIndexOfMapGame++;
+      if(this.currentIndexOfMapGame > this.mapGame.length -1) {
+        this.currentIndexOfMapGame = 0;
       }
-      enemy.speedEnemy = parseInt(random(8, 15));
+      
     }
   
     if (character.isCollisionOn(enemy)) {
-      image(gameOverImage, width/2 - 200, height/3);
-      noLoop()
+      life.loseLife();
+      if(life.lifeQuantity <= 0) {
+        image(gameOverImage, width/2 - 200, height/3);
+        noLoop()
+      }
     };
   
   }
