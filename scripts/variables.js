@@ -10,6 +10,9 @@ let score;
 let game;
 let currentScene = 'startScene';
 let scenes;
+let startScene;
+let startSceneImage;
+let startSceneFont;
 
 const enemyMatrix = [
   [0, 0],

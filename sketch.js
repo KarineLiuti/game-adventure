@@ -6,7 +6,11 @@ function setup() {
   //gameSound.loop();
   game = new Game();
   game.setup();
-  currentScene = 'game';
+  startScene = new StartScene();
+  scenes = {
+    game,
+    startScene
+  }
 }
 
 function keyPressed(){
@@ -14,8 +18,6 @@ function keyPressed(){
 }
 
 function draw() {
-  if(currentScene === 'game') {
-    game.draw();
-  }
+  scenes[currentScene].draw();
 }
 
