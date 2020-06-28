@@ -1,17 +1,16 @@
 class Enemy extends Animation {
-  constructor(matrix, imageObject, x, yVariation, widthObject, heightObject, spriteWidth, spriteHeight, speedEnemy, delayEnemy) {
+  constructor(matrix, imageObject, x, yVariation, widthObject, heightObject, spriteWidth, spriteHeight, speedEnemy) {
     super(matrix, imageObject, x, yVariation, widthObject, heightObject, spriteWidth, spriteHeight)
 
     this.speedEnemy = speedEnemy;
-    this.delayEnemy = delayEnemy;
-
+    this.x = width;
   }
 
   move() {
     this.x = this.x - this.speedEnemy;
+  }
 
-    if(this.x < -this.widthObject - this.delayEnemy) {
-      this.x = width;
-    }
+  drawAgain() {
+    this.x = width;
   }
 }
